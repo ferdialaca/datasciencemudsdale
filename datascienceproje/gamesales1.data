@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Video Game Sales and Ratings | Kaggle</title>
+  <meta charset="utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Video game sales data from VGChartz with corresponding ratings from Metacritic" />
+  <meta name="turbolinks-cache-control" content="no-cache" />
+    <meta name="keywords" content="video games" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" type="text/javascript">
+    window["pageRequestStartTime"] = 1641465958519;
+    window["pageRequestEndTime"] = 1641465958669;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=a39c9d14b7e6072d0f7a" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=453de5392c911bfbccf0" />
+  
+    
+ 
+      <script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" async src="https://www.googletagmanager.com/gtag/js?id=UA-12629138-1"></script>
+
+  
+    
+        <meta property="og:url" content="https://kaggle.com/kendallgillies/video-game-sales-and-ratings" />
+        <meta property="og:title" content="Video Game Sales and Ratings" />
+        <meta property="og:description" content="Video game sales data from VGChartz with corresponding ratings from Metacritic" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/722/1346/56f5ca607432fea5533d1781cf44140f/dataset-card.jpg" />
+        <meta property="fb:app_id" content="2665027677054710" />
+
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@kaggledatasets" />
+    
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+        <script nonce="nk5M4UI4R6hQ++LQp46UwA==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Video Game Sales and Ratings","description":"# Context \n\nThis data set contains a list of video games with sales greater than 100,000 copies along with critic and user ratings.  It is a combined web scrape from [VGChartz][1] and [Metacritic][2] along with manually entered year of release values for most games with a missing year of release.  The original coding was created by [Rush Kirubi][3] and can be found [here][4], but it limited the data to only include a subset of video game platforms.   Not all of the listed video games have information on Metacritic, so there data set does have missing values.\n\n# Content\n\nThe fields include:\n\n - Name - The game's name \n - Platform - Platform of the games release\n - Year_of_Release - Year of the game's release\n - Genre - Genre of the game\n - Publisher - Publisher of the game\n - NA_Sales - Sales in North America (in millions)\n - EU_Sales - Sales in Europe (in millions)\n - JP_Sales - Sales in Japan (in millions)\n - Other_Sales - Sales in the rest of the world (in millions)\n - Global_Sales - Total worldwide sales (in millions)\n - Critic_score - Aggregate score compiled by Metacritic staff\n - Critic_count - The number of critics used in coming up with the critic score\n - User_score - Score by Metacritic's subscribers\n - User_count - Number of users who gave the user score \n - Rating - The ESRB ratings\n\n# Acknowledgements\n\nAgain the main credit behind this data set goes to [Rush Kirubi][5].  I just commented out two lines of his code.\n\nAlso the original inspiration for this data set came from [Gregory Smith][6] who originally scraped the data from VGChartz, it can be found [here][7].\n\n\n  [1]: http://www.vgchartz.com/gamedb/\n  [2]: http://www.metacritic.com/game\n  [3]: https://www.kaggle.com/rush4ratio\n  [4]: https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings\n  [5]: https://www.kaggle.com/rush4ratio\n  [6]: https://www.kaggle.com/gregorut\n  [7]: https://www.kaggle.com/gregorut/videogamesales","url":"https://www.kaggle.com/kendallgillies/video-game-sales-and-ratings","version":1,"keywords":["subject, culture and humanities, games, video games"],"license":{"@type":"CreativeWork","name":"Unknown","url":""},"identifier":["722"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"KendallGillies","url":"https://www.kaggle.com/kendallgillies","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/882814-kg.jpg"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/kendallgillies/video-game-sales-and-ratings/download","contentSize":"446802 bytes"}],"commentCount":1,"dateModified":"2017-01-25T20:55:02.07Z","discussionUrl":"https://www.kaggle.com/kendallgillies/video-game-sales-and-ratings/discussion","alternateName":"Video game sales data from VGChartz with corresponding ratings from Metacritic","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/722/1346/56f5ca607432fea5533d1781cf44140f/dataset-card.jpg","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":1},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":4405},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":32824},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":77}]}</script>
+    
+
+  
+    
+        <link rel="alternate" type="application/json+oembed"
+            href="https://www.kaggle.com/oembed/dataset?url=https%3A%2F%2Fwww.kaggle.com%2Fkendallgillies%2Fvideo-game-sales-and-ratings"
+            title="Video Game Sales and Ratings" />
+    
+
+  
+    
+    
+<script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+
+    Kaggle.Current = {
+        antiForgeryToken: 'CfDJ8LdUzqlsSWBPr4Ce3rb9VL9ZpdvxjdYe3TbbUAlWnsaBHaYPcqndYJPPgV10h86uOqgbkwHOM0fshInQ_RdfKZgJ51Dd-66uMyVed_bIu0hDougnExQlW0MGiKkBdCTLfnHsOMaGnjr2QP4ab3veHeU',
+        isAnonymous: true,
+        analyticsToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE0NjY4NTgsIlVzZXJJZCI6MH0.qrdbmq5-fUOW3QJ7wuuAbDVTGS-DSkwwM3-_5EXNDLg',
+        analyticsTokenExpiry: 15,
+        
+        
+        
+        
+        
+        
+        
+        enableRapidash: true, 
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+            var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+            if (textVersion) {
+                return textVersion;
+            }
+        } catch(ex) {}
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+    
+
+<script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+
+    <script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="nk5M4UI4R6hQ++LQp46UwA==" src="/static/assets/runtime.js?v=62873807e4129d37bff2" data-turbolinks-track="reload"></script>
+  <script nonce="nk5M4UI4R6hQ++LQp46UwA==" src="/static/assets/vendor.js?v=26a3487f6f4d622267d2" data-turbolinks-track="reload"></script>
+  <script nonce="nk5M4UI4R6hQ++LQp46UwA==" src="/static/assets/app.js?v=102e3c8aa30c2dbc373c" data-turbolinks-track="reload"></script>
+    <script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+
+<div id="site-container"></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="nk5M4UI4R6hQ++LQp46UwA==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"navigationType":"BOTH_NAV"});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+
+
+<div data-component-name="DatasetContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="nk5M4UI4R6hQ++LQp46UwA==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"title":"Video Game Sales and Ratings","slug":"video-game-sales-and-ratings","licenseId":4,"data":{"firestorePath":"S9OEOdlxyYbtSrAgjVZO/versions/9dcDBXunL0Ipxv49FYtW","databundleVersionId":1346,"databundle":{"type":"databundle","databundleInfo":{"currentDatabundleVersionId":1346,"databundleType":"dataset","diffType":"versioned","creationDate":"2017-01-25T20:55:02.07Z","creatorUserId":882814,"removalDate":null,"currentGoodVersionKey":"9dcDBXunL0Ipxv49FYtW","lastestVersionKey":"9dcDBXunL0Ipxv49FYtW","versions":{"totalChildren":1,"count":0,"children":[]}},"datasetInfo":{"datasetId":722,"datasetSlug":"/kendallgillies/video-game-sales-and-ratings","isPrivate":false},"competitionInfo":null,"remoteDatasourceInfo":null,"bigqueryInfo":null,"githubInfo":null,"key":"S9OEOdlxyYbtSrAgjVZO","path":"S9OEOdlxyYbtSrAgjVZO","legacyEntityId":722,"relativeUrl":"","name":"Video Game Sales and Ratings","description":null},"databundleVersion":{"type":"databundleVersion","databundleVersionInfo":{"versionNumber":1,"versionNotes":"Initial release","creatorUserId":882814,"creationDate":"2017-01-25T20:55:02.07Z","removalDate":null,"databundleVersionType":"fileset","objectTypeCount":{}},"datasetVersionInfo":{"datasetVersionId":1346},"statusInfo":{"status":"ready","statusMessage":"Ready","percentageCompleted":1.0},"exceptionInfo":{"criticalException":null,"warningExceptions":[]},"filesetInfo":{"totalSize":1515957,"downloadUrl":null,"directories":{"totalChildren":0,"count":0,"children":[]},"files":{"totalChildren":1,"count":0,"children":[]}},"originalCompressionInfo":null,"bundleCompressionInfo":{"filename":"archive.zip","fileExtension":".zip","fileSize":446802,"contentEncoding":"application/zip","contentMd5":"w7zcJ365/Afv+/iQWn7gzw==","archiveGcsUrl":"gs://kaggle-data-sets/722/1346/bundle/archive.zip","creationLastUpdate":"2019-09-20T06:34:45.3217165Z","creationPercentComplete":1.0},"bigquerySnapshotInfo":null,"storageInfo":{"uploadDataLocation":{"bucket":"kaggle-data-sets","path":"722/1346/upload"},"rawDataLocation":{"bucket":"kagglesdsdata","path":"datasets/722/1346"},"individualCompressedLocation":{"bucket":"kaggle-data-sets","path":"722/1346/compressed"},"bundleArchiveLocation":{"bucket":"kaggle-data-sets","path":"722/1346/bundle/archive.zip"},"fileSystemLocation":{"bucket":"kaggle-data-sources","path":"datasets/722/1346/fs/embedded_fs"}},"fileSummaryInfo":{"totalFileCount":1,"fileTypes":[{"extension":".csv","fileCount":1,"totalSize":1515957}],"sampleFileNames":["Video_Game_Sales_as_of_Jan_2017.csv"]},"columnSummaryInfo":{"totalColumnCount":15,"columnTypes":[{"columnType":"Decimal","columnCount":6,"rowCount":104496},{"columnType":"String","columnCount":5,"rowCount":87080},{"columnType":"Integer","columnCount":4,"rowCount":69664}],"sampleColumnNames":["Global_Sales","Other_Sales","JP_Sales","EU_Sales","NA_Sales","Publisher","Genre","Year_of_Release","Platform","Name"]},"externalCopyInfo":null,"originalRemoteUrlInfo":null,"key":"9dcDBXunL0Ipxv49FYtW","path":"S9OEOdlxyYbtSrAgjVZO/versions/9dcDBXunL0Ipxv49FYtW","legacyEntityId":1346,"relativeUrl":"","name":"Version 1","description":"Initial release"}},"isPrivate":false,"owner":{"id":882814,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/882814-kg.jpg","isOrganization":false,"name":"KendallGillies","profileUrl":"/kendallgillies","slug":"kendallgillies","maxFileSizeBytes":null,"userTier":"novice","organizationMemberCount":null},"licenseGroups":[{"id":1,"name":"Creative Commons","licenses":[{"id":1,"name":"CC0: Public Domain","description":"CC0: Public Domain \u003ca href=\u0022https://creativecommons.org/publicdomain/zero/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/publicdomain/zero/1.0/","displaySequence":1},{"id":3,"name":"CC BY-NC-SA 4.0","description":"CC BY-NC-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/4.0/","displaySequence":2},{"id":8,"name":"CC BY-SA 4.0","description":"CC BY-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/4.0/","displaySequence":3},{"id":10,"name":"CC BY-SA 3.0","description":"CC BY-SA 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/3.0/","displaySequence":4},{"id":13,"name":"Attribution 4.0 International (CC BY 4.0)","description":"CC-BY 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/4.0/","displaySequence":5},{"id":14,"name":"Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)","description":"CC-BY-NC 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc/4.0/","displaySequence":6},{"id":16,"name":"Attribution 3.0 Unported (CC BY 3.0)","description":"CC BY 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/3.0/","displaySequence":7},{"id":17,"name":"Attribution 3.0 IGO (CC BY 3.0 IGO)","description":"CC BY 3.0 IGO \u003ca href=\u0022https://creativecommons.org/licenses/by/3.0/igo/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by/3.0/igo/","displaySequence":8},{"id":19,"name":"Attribution-NonCommercial-ShareAlike 3.0 IGO (CC BY-NC-SA 3.0 IGO)","description":"CC BY-NC-SA 3.0 IGO \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/3.0/igo/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/3.0/igo/","displaySequence":9},{"id":22,"name":"Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)","description":"CC BY-ND 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nd/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nd/4.0/","displaySequence":10},{"id":23,"name":"Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)","description":"CC BY-NC-ND 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-nd/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-nd/4.0/","displaySequence":11}],"displaySequence":1},{"id":2,"name":"GPL","licenses":[{"id":9,"name":"GPL 2","description":"GPL 2 \u003ca href=\u0022http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html","displaySequence":1},{"id":25,"name":"GNU Lesser General Public License 3.0","description":"LGPL 3.0 \u003ca href=\u0022http://www.gnu.org/licenses/lgpl-3.0.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/lgpl-3.0.html","displaySequence":2},{"id":26,"name":"GNU Affero General Public License 3.0","description":"AGPL 3.0 \u003ca href=\u0022http://www.gnu.org/licenses/agpl-3.0.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/agpl-3.0.html","displaySequence":3},{"id":27,"name":"GNU Free Documentation License 1.3","description":"FDL 1.3 \u003ca href=\u0022http://www.gnu.org/licenses/fdl-1.3.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/fdl-1.3.html","displaySequence":4}],"displaySequence":2},{"id":3,"name":"Open Data Commons","licenses":[{"id":5,"name":"Database: Open Database, Contents: Database Contents","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: Database Contents \u003ca href=\u0022http://opendatacommons.org/licenses/dbcl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://opendatacommons.org/licenses/dbcl/1.0/","displaySequence":1},{"id":6,"name":"Database: Open Database, Contents: © Original Authors","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: © Original Authors","url":"http://opendatacommons.org/licenses/odbl/1.0/","displaySequence":2},{"id":15,"name":"ODC Public Domain Dedication and Licence (PDDL)","description":"PDDL  \u003ca href=\u0022https://opendatacommons.org/licenses/pddl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://opendatacommons.org/licenses/pddl/1.0/","displaySequence":3},{"id":24,"name":"ODC Attribution License (ODC-By)","description":"ODC-BY 1.0 \u003ca href=\u0022https://opendatacommons.org/licenses/by/1-0/index.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://opendatacommons.org/licenses/by/1-0/index.html","displaySequence":4}],"displaySequence":3},{"id":6,"name":"Community Data License","licenses":[{"id":20,"name":"Community Data License Agreement - Permissive - Version 1.0","description":"CDLA Permissive 1.0 \u003ca href=\u0022https://cdla.io/permissive-1-0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://cdla.io/permissive-1-0/","displaySequence":1},{"id":21,"name":"Community Data License Agreement - Sharing - Version 1.0","description":"CDLA Sharing 1.0 \u003ca href=\u0022https://cdla.io/sharing-1-0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://cdla.io/sharing-1-0/","displaySequence":2}],"displaySequence":4},{"id":4,"name":"Special","licenses":[{"id":7,"name":"World Bank Dataset Terms of Use","description":"World Bank Dataset Terms of Use \u003ca href=\u0022https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets","displaySequence":1},{"id":2,"name":"Reddit API Terms","description":"Reddit API Terms \u003ca href=\u0022https://www.reddit.com/wiki/api\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.reddit.com/wiki/api","displaySequence":2},{"id":18,"name":"U.S. Government Works","description":"U.S. Government Works \u003ca href=\u0022https://www.usa.gov/government-works/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.usa.gov/government-works/","displaySequence":3},{"id":28,"name":"EU ODP Legal Notice","description":"EU ODP Legal Notice \u003ca href=\u0022https://ec.europa.eu/info/legal-notice_en\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://ec.europa.eu/info/legal-notice_en","displaySequence":4}],"displaySequence":5},{"id":5,"name":"Other","licenses":[{"id":11,"name":"Data files © Original Authors","description":"Data files © Original Authors","url":null,"displaySequence":1},{"id":12,"name":"Other (specified in description)","description":"Other (specified in description)","url":null,"displaySequence":2},{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":3}],"displaySequence":6}],"owners":[{"id":0,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/","isOrganization":false,"name":"","profileUrl":"/","slug":"","maxFileSizeBytes":null,"userTier":"novice","organizationMemberCount":null},{"id":882814,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/882814-kg.jpg","isOrganization":false,"name":"KendallGillies","profileUrl":"/kendallgillies","slug":"kendallgillies","maxFileSizeBytes":null,"userTier":"novice","organizationMemberCount":null}],"overview":"Video game sales data from VGChartz with corresponding ratings from Metacritic","description":"# Context \n\nThis data set contains a list of video games with sales greater than 100,000 copies along with critic and user ratings.  It is a combined web scrape from [VGChartz][1] and [Metacritic][2] along with manually entered year of release values for most games with a missing year of release.  The original coding was created by [Rush Kirubi][3] and can be found [here][4], but it limited the data to only include a subset of video game platforms.   Not all of the listed video games have information on Metacritic, so there data set does have missing values.\n\n# Content\n\nThe fields include:\n\n - Name - The game\u0027s name \n - Platform - Platform of the games release\n - Year_of_Release - Year of the game\u0027s release\n - Genre - Genre of the game\n - Publisher - Publisher of the game\n - NA_Sales - Sales in North America (in millions)\n - EU_Sales - Sales in Europe (in millions)\n - JP_Sales - Sales in Japan (in millions)\n - Other_Sales - Sales in the rest of the world (in millions)\n - Global_Sales - Total worldwide sales (in millions)\n - Critic_score - Aggregate score compiled by Metacritic staff\n - Critic_count - The number of critics used in coming up with the critic score\n - User_score - Score by Metacritic\u0027s subscribers\n - User_count - Number of users who gave the user score \n - Rating - The ESRB ratings\n\n# Acknowledgements\n\nAgain the main credit behind this data set goes to [Rush Kirubi][5].  I just commented out two lines of his code.\n\nAlso the original inspiration for this data set came from [Gregory Smith][6] who originally scraped the data from VGChartz, it can be found [here][7].\n\n\n  [1]: http://www.vgchartz.com/gamedb/\n  [2]: http://www.metacritic.com/game\n  [3]: https://www.kaggle.com/rush4ratio\n  [4]: https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings\n  [5]: https://www.kaggle.com/rush4ratio\n  [6]: https://www.kaggle.com/gregorut\n  [7]: https://www.kaggle.com/gregorut/videogamesales","datasetId":722,"isRemoved":false,"isVersionRemoved":false,"datasetVersionId":1346,"datasetVersionNumber":1,"lastVersionNumber":1,"datasetUrl":"/kendallgillies/video-game-sales-and-ratings","datasetExternalUrl":"https://kaggle.com/kendallgillies/video-game-sales-and-ratings","originalImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/722/1346/56f5ca607432fea5533d1781cf44140f/dataset-original.jpg","coverImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/722/1346/56f5ca607432fea5533d1781cf44140f/dataset-cover.jpg","cardImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/722/1346/56f5ca607432fea5533d1781cf44140f/dataset-card.jpg","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/722/1346/56f5ca607432fea5533d1781cf44140f/dataset-thumbnail.jpg","license":{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":null},"voteCount":77,"creatorUserId":882814,"creatorDisplayName":"KendallGillies","ownerTwitter":null,"lastUpdated":"2017-01-25T20:55:02.07Z","downloadUrl":"/kendallgillies/video-game-sales-and-ratings/download","newNotebookUrl":"code/scripts/new?datasetVersionId=1346","newScriptUrl":"code/scripts/new?datasetVersionId=1346","hasAlreadyVotedUp":false,"isOldDatasetVersion":false,"numberOfViews":32824,"numberOfDownloads":4405,"numberOfScripts":18,"numberOfTopics":1,"numberOfTasks":0,"canEdit":false,"canPerformOwnerTasks":false,"canEditSlug":false,"canEditPublishStatus":false,"canEditDescription":false,"hideVersionStatuses":true,"cardImageLeft":1182,"cardImageTop":137,"cardImageWidth":2428,"cardImageHeight":2428,"coverImageLeft":0,"coverImageTop":834,"coverImageWidth":4752,"coverImageHeight":1003,"datasetVersions":[{"id":1346,"slug":"video-game-sales-and-ratings","name":"Video Game Sales and Ratings","creationDate":"2017-01-25T20:55:02.07Z","versionNumber":1,"versionNotes":"Initial release","thumbnailImageUrl":"https://storage.googleapis.com/kaggle-datasets-images/722/1346/56f5ca607432fea5533d1781cf44140f/dataset-thumbnail.jpg","datasetVersionUrl":"/kendallgillies/video-game-sales-and-ratings/version/1","status":"ready","userMessage":null,"isRemoved":false,"creator":{"id":882814,"imageUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/882814-kg.jpg","isOrganization":false,"name":"KendallGillies","profileUrl":"/kendallgillies","slug":"kendallgillies","maxFileSizeBytes":null,"userTier":"novice","organizationMemberCount":null},"userSpecifiedSources":null,"doi":null,"databundleVersionId":1346}],"datasetVersionTotalCount":1,"feed":[],"topicId":null,"isNewTopic":false,"canSeeDeletionButton":false,"checklistDismissed":true,"type":"fileset","diffType":"versioned","checklistCollapsed":true,"isInFlight":false,"maintainerOrganization":null,"createdByKernel":null,"usabilityRating":{"score":0.7352941,"columnDescriptionScore":0.5,"coverImageScore":1.0,"fileDescriptionScore":1.0,"fileFormatScore":1.0,"licenseScore":0.0,"overviewScore":1.0,"provenanceScore":0.0,"publicKernelScore":1.0,"subtitleScore":1.0,"tagScore":1.0,"updateFrequencyScore":0.0},"bookmarked":false,"discussion":{"canDownvote":false,"dataUrl":"/forums/2460/topics.json","id":2460,"showSubscribeButton":false,"isSubscribed":false,"subscription":"unsubscribe","paramValues":{"page":1,"search":null,"group":"all","sortBy":"hot","category":"all"}},"currentTab":"data","newTopic":{"allowAttachments":false,"authorTier":"novice","authorType":"topic","forumId":2460,"parentName":"Video Game Sales and Ratings","parentUrl":"/kendallgillies/video-game-sales-and-ratings/discussion","isPrivate":false},"categories":{"tags":[{"id":2507,"name":"video games","fullPath":"subject \u003e culture and humanities \u003e games \u003e video games","listingUrl":"/datasets?group=public\u0026tagids=2507","description":"Video games were originally created to prevent people from going to college and getting good jobs. That back-fired and now we have data centers full of GPUs training models to tell the difference between cats and dogs. All thanks to gamers.","datasetCount":2104,"competitionCount":4,"notebookCount":3620,"tagUrl":"/tags/video-games","displayName":"Video Games","fontAwesomeIcon":""}],"type":"dataset"},"upvoteSuggestion":{"voteCount":77,"medalVoteCount":4,"upVoters":[{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1559762-kg.jpg","displayName":"Denny","profileUrl":"/dbromley","tier":"contributor","tierInt":1,"userId":1559762,"userName":"dbromley"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","displayName":"Debbie","profileUrl":"/dhunton","tier":"contributor","tierInt":1,"userId":3374369,"userName":"dhunton"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/5815839-kg.jpg","displayName":"Luna McBride","profileUrl":"/lunamcbride24","tier":"contributor","tierInt":1,"userId":5815839,"userName":"lunamcbride24"},{"avatarThumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/5996065-kg.jpg","displayName":"José Henrique Gaspar","profileUrl":"/henriquegaspar","tier":"contributor","tierInt":1,"userId":5996065,"userName":"henriquegaspar"}]},"readerGroupId":null,"writerGroupId":null,"collaborators":{"owner":{"isUser":true,"isGroup":false,"userId":882814,"groupId":null,"groupMemberCount":null,"profileUrl":"/kendallgillies","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/882814-kg.jpg","name":"KendallGillies","slug":"kendallgillies","userTier":"novice","joinDate":null,"type":"owner"},"collaborators":[]},"isCollaborator":false,"deletionNeedsReview":false,"hasDatasetDoiApproved":false,"canSeeConfigAsCode":true,"canCreateDatasetTasks":false,"blockTaskCreation":false,"canSeeDatasetHashLink":true,"medalUrl":"/static/images/medals/datasets/bronzel@2x.png","datasetHashLink":null,"@wf": "Datasets.DatasetDtoWireFormat"});performance && performance.mark && performance.mark("DatasetContainer.componentCouldBootstrap");</script><script nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: [],
+    });
+</script>
+<script type="text/javascript" nonce="nk5M4UI4R6hQ&#x2B;&#x2B;LQp46UwA==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const useProdHosts = ["www.kaggle.com", "admin.kaggle.com"];
+    const subdomain = useProdHosts.includes(window.location.hostname) ? "www" : "staging";
+
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    lib.src = `https://${subdomain}.kaggleusercontent.com/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
